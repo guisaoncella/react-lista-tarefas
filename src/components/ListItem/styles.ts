@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+type Props = {
+    done: boolean
+}
+
+export const Container = styled.div(({done}: Props) => (`
     display: flex;
     background-color: #20212C;
     padding: 10px;
@@ -18,5 +22,6 @@ export const Container = styled.div`
         font-size: 18px;
         font-weight: 600;
         color: #ccc;
+        text-decoration: ${done ? 'line-through' : 'initial'};
     }
-`;
+`));

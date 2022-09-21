@@ -19,6 +19,11 @@ const App = () => {
         setList(newList);
     }
 
+    function handleDoneChange(id: number){
+        let filtered = list.filter((item) => item.id === id);
+        filtered[0].done = !filtered[0].done;
+    }
+
     return(
         <Container>
             <Header>Lista de Tarefas</Header>
@@ -26,7 +31,7 @@ const App = () => {
                 <AddArea addTaskFunction={handleAddTask}/>
 
                 {list.map((item, index) => (
-                    <ListItem key={index} item={item} />
+                    <ListItem key={index} item={item} handleCheckFunction={handleDoneChange} />
                 ))}   
             </Area>
         </Container>

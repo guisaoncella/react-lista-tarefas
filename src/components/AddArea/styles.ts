@@ -11,6 +11,9 @@ export const Container = styled.div`
     .image{
         font-size: 20px;
         margin-left: 10px;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
     }
 
     input{
